@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedition Antarctica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="mainMenu" class="screen active">
+            <div class="menu-content">
+                <h1>Expedition Antarctica</h1>
+                <p>Survive the harsh Antarctic wilderness and conduct research!</p>
+                <button id="startGame" class="menu-btn">Start Expedition</button>
+                <button id="howToPlay" class="menu-btn">How to Play</button>
+            </div>
+        </div>
+
+        <div id="howToPlayScreen" class="screen">
+            <div class="menu-content">
+                <h1>How to Play</h1>
+                <div class="instructions">
+                    <p>🎯 <strong>Objective:</strong> Survive and collect research items</p>
+                    <p>⬆️⬇️⬅️➡️ <strong>Movement:</strong> Arrow keys or WASD</p>
+                    <p>🔍 <strong>Research:</strong> Collect ice cores, meteorites, fossils</p>
+                    <p>🌡️ <strong>Survival:</strong> Keep warmth and health up</p>
+                    <p>🏠 <strong>Shelters:</strong> Find stations to warm up</p>
+                    <p>🏃‍♂️ <strong>Sprint:</strong> Hold SHIFT (drains stamina)</p>
+                </div>
+                <button id="backToMenu" class="menu-btn">Back to Menu</button>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <canvas id="gameCanvas"></canvas>
+            
+            <div id="hud">
+                <div class="stat-bar">
+                    <div class="stat-label">Health:</div>
+                    <div class="stat-container">
+                        <div id="healthBar" class="stat-fill health"></div>
+                        <span id="healthText" class="stat-text">100</span>
+                    </div>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-label">Warmth:</div>
+                    <div class="stat-container">
+                        <div id="warmthBar" class="stat-fill warmth"></div>
+                        <span id="warmthText" class="stat-text">100</span>
+                    </div>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-label">Stamina:</div>
+                    <div class="stat-container">
+                        <div id="staminaBar" class="stat-fill stamina"></div>
+                        <span id="staminaText" class="stat-text">100</span>
+                    </div>
+                </div>
+                <div id="researchCounter">Research: 0</div>
+                <div id="timeCounter">Time: 00:00</div>
+                <div id="weatherDisplay">Weather: Clear</div>
+            </div>
+
+            <div id="miniMap">
+                <canvas id="mapCanvas"></canvas>
+            </div>
+        </div>
+
+        <div id="gameOverScreen" class="screen">
+            <div class="menu-content">
+                <h1>Expedition Ended</h1>
+                <div id="gameStats">
+                    <p>Survival Time: <span id="finalTime">00:00</span></p>
+                    <p>Research Collected: <span id="finalResearch">0</span></p>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                </div>
+                <button id="playAgain" class="menu-btn">New Expedition</button>
+                <button id="menuFromGame" class="menu-btn">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
